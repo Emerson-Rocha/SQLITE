@@ -1,7 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import {
+    Banco, createTable, insertUsuario, selectUsuarios, selectUsuarioById, selectUsuarioNome
+    , deleteUsuario, updateUsuario
+} from './Banco/Config';
+
+import {useEffect} from 'react';
 
 export default function App() {
+
+    
+
+
   return (
     <View style={styles.container}>
       
