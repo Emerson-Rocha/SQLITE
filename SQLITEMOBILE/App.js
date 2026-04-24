@@ -9,7 +9,12 @@ import {useEffect} from 'react';
 
 export default function App() {
 
-    
+    useEffect(()=>{
+     async () => {
+       const db = await Banco();
+     }
+
+    },[])
 
 
   return (
