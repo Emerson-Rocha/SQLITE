@@ -10,10 +10,11 @@ import {useEffect} from 'react';
 export default function App() {
 
     useEffect(()=>{
-     async () => {
+     async function Main (){
        const db = await Banco();
-     }
-
+       await createTable(db); 
+     };
+     Main() ;
     },[])
 
 
