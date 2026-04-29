@@ -13,7 +13,10 @@ export default function App() {
      async function Main (){
        const db = await Banco();
        await createTable(db); 
-       insertUsuario(" Zelão ", "ze@cps.com.br") ;
+      //await insertUsuario(db, " sofie ", "xcps.com.br")  ;
+      // exibir campos
+          const resp =  await selectUsuarios(db) ;
+          console.log(resp);
 
      };
      Main() ;
