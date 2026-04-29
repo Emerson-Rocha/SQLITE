@@ -16,7 +16,7 @@ export default function App() {
       //await insertUsuario(db, " sofie ", "xcps.com.br")  ;
       // exibir campos
           const resp =  await selectUsuarios(db) ;
-          console.log(resp);
+          console.log(resp) ;
 
      };
      Main() ;
