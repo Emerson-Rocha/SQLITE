@@ -1,24 +1,17 @@
 import * as SQLite from 'expo-sqlite';
 
-
-
-
 //----------------------------------------------------------------------------
 // Função para abrir ou criar  o banco de dados
 async function Banco() {
     // Open the database
     try {
-        const db = await SQLite.openDatabaseAsync('fatecvotorantin.db');
+        const db = await SQLite.openDatabaseAsync('DDM2.db');
         console.log('Banco de dados aberto');
-
         return db;
     } catch (error) {
         console.log(error);
 
     }
-
-
-
 }
 
 
@@ -31,7 +24,7 @@ async function createTable(db: SQLite.SQLiteDatabase) {
                 CREATE TABLE IF NOT EXISTS USUARIO (
                     ID_US  INTEGER PRIMARY KEY AUTOINCREMENT,
                     NOME_US VARCHAR(100),
-                    EM-AIL_US VARCHAR(100)
+                    EMAIL_US VARCHAR(100)
                 );
 `
         ) ;
@@ -128,7 +121,11 @@ async function updateUsuario(db: SQLite.SQLiteDatabase, id: number, nome: string
     }
 }
 
+// drop tabela
 
+async function dropTable(db:SQLite.SQLiteDatabase) {
+        await db.execAsync('drop table USUARIO');
+}
 
 export {
     Banco, createTable, insertUsuario, selectUsuarios, selectUsuarioById, selectUsuarioNome

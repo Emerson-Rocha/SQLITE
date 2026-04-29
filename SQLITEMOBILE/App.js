@@ -13,6 +13,8 @@ export default function App() {
      async function Main (){
        const db = await Banco();
        await createTable(db); 
+       insertUsuario(" Zelão ", "ze@cps.com.br") ;
+
      };
      Main() ;
     },[])
