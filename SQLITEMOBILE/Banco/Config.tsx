@@ -124,10 +124,11 @@ async function updateUsuario(db: SQLite.SQLiteDatabase, id: number, nome: string
 // drop tabela
 
 async function dropTable(db:SQLite.SQLiteDatabase) {
-        await db.execAsync('drop table USUARIO');
+        await db.execAsync('DROP TABLE IF EXISTS USUARIO');
+        console .log('Tabela USUARIO excluida');
 }
 
 export {
     Banco, createTable, insertUsuario, selectUsuarios, selectUsuarioById, selectUsuarioNome
-    , deleteUsuario, updateUsuario
+    , deleteUsuario, updateUsuario, dropTable
 };
